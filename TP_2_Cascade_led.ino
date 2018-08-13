@@ -22,9 +22,6 @@ void setup() {
 
 void loop() {
   Mesure = sr04.Distance();
-  //Serial.print(Mesure);
-  //Serial.println("cm");
-  //delay(1000);
   if (Mesure > 30) {
     Data = 7;
   }
