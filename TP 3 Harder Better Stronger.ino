@@ -32,17 +32,7 @@ void loop() {
   
   for(int y = 0; y < 2; y++) {
     for(int t = 0; t < 22; t++) {
-      MAJ(0, HIGH);
-      MAJ(7, HIGH);
-      delay(50);
-      MAJ(3, HIGH);
-      MAJ(4, HIGH);
-      delay(50);
-      MAJ(3, LOW);
-      MAJ(4, LOW);
-      delay(50);
-      MAJ(0, LOW);
-      MAJ(7, LOW);
+      MAJ3();
     }
     for(int t = 0; t < 21; t++) {
       MAJ2(255);
@@ -81,6 +71,20 @@ void MAJ2(byte n) {
   shiftOut(dataPin, clockPin, LSBFIRST, n);
   digitalWrite(latchPin, HIGH);
   delay(100);
+}
+
+void MAJ3() {
+  MAJ(0, HIGH);
+  MAJ(7, HIGH);
+  delay(50);
+  MAJ(3, HIGH);
+  MAJ(4, HIGH);
+  delay(50);
+  MAJ(3, LOW);
+  MAJ(4, LOW);
+  delay(50);
+  MAJ(0, LOW);
+  MAJ(7, LOW);
 }
 
 void Prin() {
